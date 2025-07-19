@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*
+    Template: swell
+    Theme Name: SWELL CHILD
+    Theme URI: https://swell-theme.com/
+    Description: SWELLの子テーマ
+    Version: 1.0.0
+    Author: LOOS WEB STUDIO
+    Author URI: https://loos-web-studio.com/
+
+    License: GNU General Public License
+    License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+/* --------------------------------------------------------------- */
+/* テーマカスタマイズ------------------------------------------------ */
+/* --------------------------------------------------------------- */
+
+/* body margin削除------------------------------- */
+.l-content { 
+    margin-bottom: 0; 
+} 
+
+/* contact form 7------------------------------- */
+.wpcf7-form.init {
+    color: white;
+}
+
+input[name="your-name"],
+input[name="your-email"],
+textarea[name="your-message"] {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 24px;
+    padding: 10px;
+}
+
+
+.wpcf7-submit {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 10rem;
+	border: none;
+	cursor: pointer;
+	line-height: 1;
+	font-size: 14.4px;
+	background-color: var(--color_main);
+	color: #ffffff;
+	padding: 12.5px 38px;
+	box-shadow: var(--swl-btn_shadow);
+	transition: box-shadow .3s;
+    border-radius: 80px;
+    margin-top: 40px;
+
+}
+
+#top-contact {
+    padding-top: 20px;
+	color:white;
+}
