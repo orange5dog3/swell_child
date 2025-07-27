@@ -24,7 +24,7 @@ add_action('wp_enqueue_scripts', function() {
 
 
 // headerをページ毎に変更--------------------------------
-function custom_nav_args($args){
+function custom_nav_args_header($args){
 	// ヘッダーメニューのみを対象にする
 	if ( isset($args['theme_location']) && $args['theme_location'] === 'header_menu' ) {
 		
@@ -46,6 +46,17 @@ function custom_nav_args($args){
 	
 	return $args;
 }
-add_filter('wp_nav_menu_args', 'custom_nav_args');
+add_filter('wp_nav_menu_args', 'custom_nav_args_header');
 
-
+// footerをページ毎に変更--------------------------------
+function custom_nav_args_footer($args){
+	if ( isset($args['theme_location']) && $args['theme_location'] === 'footer_menu' ) {
+		if ( is_page('14') ){
+			$args['menu'] = 'footer nav top';
+		} else {
+			$args['menu'] = 'footer nav else';
+		}
+	}
+	return $args;
+}
+add_filter('wp_nav_menu_args', 'custom_nav_args_footer');
