@@ -17,11 +17,16 @@
 /* --------------------------------------------------------------- */
 
 /* body margin削除------------------------------- */
-.l-content { 
+.top-content { 
     margin-bottom: 0; 
 } 
 
 /* contact form 7------------------------------- */
+#top-contact {
+    padding-top: 20px;
+	color:white;
+}
+
 .wpcf7-form.init {
     color: white;
 }
@@ -55,7 +60,3 @@ textarea[name="your-message"] {
 
 }
 
-#top-contact {
-    padding-top: 20px;
-	color:white;
-}

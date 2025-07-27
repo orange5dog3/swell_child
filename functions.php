@@ -22,3 +22,24 @@ add_action('wp_enqueue_scripts', function() {
 
 }, 11);
 
+
+// headerをページ毎に変更--------------------------------
+function custom_nav_args($args){
+	
+
+	// トップページだけ専用メニューにする
+	if ( is_page( array('14') ) ){
+		$args['menu'] = 'header nav top';
+		$args['container'] = '';
+		$args['items_wrap'] = '%3$s';
+		$args['link_before'] = ''; $args['link_after'] = '';
+		return $args;
+		} else {
+			$args['menu'] = 'header nav else';
+			$args['container'] = '';
+			$args['items_wrap'] = '%3$s';
+			$args['link_before'] = ''; $args['link_after'] = '';
+			return $args;
+		}
+	}
+add_filter('wp_nav_menu_args', 'custom_nav_args');
