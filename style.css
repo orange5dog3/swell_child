@@ -60,3 +60,45 @@ textarea[name="your-message"] {
 
 }
 
+/* btnエフェクト1------------------------------- */
+.custom-button1 {
+    display: block;
+    /* 親要素の幅いっぱいに広げる  */
+    width: 100%;
+    /* / 親要素の幅いっぱいに広げる / */
+
+    overflow: hidden;
+    /* / ホバーアニメーションではみ出る部分を隠す / */
+    position: relative;
+    z-index: 1;
+    /* / ホバー要素より前面に / */
+    transition: all 0.4s ease-in-out;
+    /* / 文字色の変化を滑らかに / */
+}
+
+.custom-button1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FDB97E;
+    /* / グラデーションの背景 / */
+    transform: translateX(-100%);
+    /* / 左に隠しておく / */
+    transition: transform 0.4s ease-in-out;
+    /* / 変形を滑らかに / */
+    z-index: -1;
+    /* / ボタンの下に配置 / */
+}
+
+.custom-button1:hover {
+    color: #fff;
+    /* / ホバー時の文字色（変化なしでも良いが見やすさのため記載） / */
+}
+
+.custom-button1:hover::before {
+    transform: translateX(0);
+    /* / 左からスライドして表示 */
+}
