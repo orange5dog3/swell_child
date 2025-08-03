@@ -1,0 +1,159 @@
+
+
+/* 既存のハンバーガーメニュー削除 ------------------------------- */
+
+/* メニューアイコン（デフォルト時） */
+.-menuBtn .c-iconBtn__icon {
+	width: 24px;
+	height: 2px;
+	background-color: #333;
+	display: grid;
+	place-items: center;
+	transition: transform .3s;
+	
+	&::before,
+	&::after {
+		grid-area: 1 / 1;
+		content: '';
+		display: block;
+		inset: 0;
+		width: 24px;
+		height: 2px;
+		background-color: #333;
+		transition: transform .3s;
+	}
+	
+	&::before {
+		transform: translateY(-8px);
+	}
+	
+	&::after {
+		transform: translateY(8px);
+	}
+}
+
+/* メニューアイコン（オープン時） */
+[data-spmenu=opened] {
+	
+	.-menuBtn .c-iconBtn__icon::before {
+			transform: rotate(45deg);
+	}
+	
+	.-menuBtn .c-iconBtn__icon {
+		background-color: transparent;
+	}
+	
+	.-menuBtn .c-iconBtn__icon::after {
+		transform: rotate(-45deg);
+	}
+}
+
+/* ボタンラベル */
+.l-header__menuBtn .c-iconBtn::after,
+.p-spMenu__closeBtn .c-iconBtn::after {
+	font-size: 10px;
+	line-height: 10px;
+	transform: translateY(12px);
+}
+
+/* ボタンラベル（開くボタン） */
+.l-header__menuBtn .c-iconBtn::after {
+/* 	content: 'MENU'; */
+}
+
+/* ボタンラベル（閉じるボタン） */
+.p-spMenu__closeBtn .c-iconBtn::after {
+/* 	content: 'CLOSE'; */
+}
+
+/* メニュー */
+.p-spMenu__inner {
+  width: 100%;
+  height: 100%;
+  transform: translateX(0)!important;
+  opacity: 0;
+  transition: opacity .5s ease-out!important;
+}
+
+/* メニュー（オープン時） */
+[data-spmenu="opened"] .p-spMenu__inner {
+  opacity: 1;
+}
+
+/* 背景色をぼかす */
+.p-spMenu__inner::before {
+	background: rgb(255 255 255 / .8);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+}
+
+/* メニューをフェードイン */
+.p-spMenu__body {
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+[data-spmenu="opened"] .p-spMenu__body {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 1s ease-in, transform .7s ease-out;
+}
+
+/* 既存のメニューを削除 */
+.c-widget__title.-spmenu,
+.p-spMenu__nav {
+  display:none;
+}
+
+
+/* 新規カスタマイズ ------------------------------- */
+
+
+/* リンクリストメニュー余白 */
+.p-spMenu__body .swell-block-linkList {
+	gap: 2em;
+    font-size: 1.2rem;
+}
+
+/* リンクリストメニュー中央寄せ */
+.p-spMenu__body .swell-block-linkList__text {
+	margin-inline: auto;
+}
+
+/* メニューアイコン（デフォルト時） */
+.-menuBtn .c-iconBtn__icon {
+	width: 24px;
+	height: 2px;
+	background-color: #333;
+	display: grid;
+	place-items: center;
+	transition: transform .3s;
+	
+	&::before,
+	&::after {
+		grid-area: 1 / 1;
+		content: '';
+		display: block;
+		inset: 0;
+		width: 24px;
+		height: 2px;
+		background-color: #333;
+		transition: transform .3s;
+	}
+}
+
+/* メニューをフェードイン */
+.p-spMenu__body {
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+[data-spmenu="opened"] .p-spMenu__body {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 1s ease-in, transform .7s ease-out;
+}
+
+
+
+

@@ -1,0 +1,115 @@
+#top-contact {
+    padding-top: 20px;
+	color:white;
+}
+
+.wpcf7-form.init {
+    color: white;
+}
+
+input[name="your-name"],
+input[name="your-email"],
+input[name="your-company"],
+textarea[name="your-message"] {
+	width: 100%;
+    padding: 10px;
+    line-height: 1;
+}
+
+
+@media (min-width: 769px) {
+    .custom-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: stretch;
+
+        input,
+        textarea {
+            margin-top: 0.5rem;
+        }
+    }
+
+    .form-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-right-column textarea {
+        height: 257px;
+        box-sizing: border-box;
+        resize: vertical;
+
+    }
+
+    .turnstile {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -5rem;
+    }
+
+    .cf-turnstile {
+        transform: scale(0.75);
+        transform-origin: top right;
+    }
+   
+}
+
+.wpcf7-submit {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 10rem;
+	border: none;
+	cursor: pointer;
+	line-height: 1;
+	font-size: 14.4px;
+	background-color: var(--color_main);
+	color: #ffffff;
+	padding: 12.5px 38px;
+	box-shadow: var(--swl-btn_shadow);
+	transition: box-shadow .3s;
+    border-radius: 80px;
+    margin-top: 50px;
+}
+
+
+/* Cloudflare Turnstile をグリッド全体にまたがらせる */
+/* .cf-turnstile {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    margin: 2rem auto;
+} */
+
+
+/* モバイル用 */
+
+
+.custom-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    input,
+    textarea {
+        margin-top: 0.5rem;
+    }
+}
+
+.form-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.turnstile {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+
+.cf-turnstile {
+    transform: scale(0.75);
+}

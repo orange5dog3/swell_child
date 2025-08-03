@@ -47,7 +47,5 @@ $the_id = get_queried_object_id();
 			endif;
 		?>
 	</div>
-	<!-- top page のみpadding-bottom無くす -->
-	<div class="<?php echo is_front_page() ? 'l-content top-content' : 'l-content'; ?>">
 </main>
 <?php get_footer(); ?>

@@ -11,7 +11,7 @@
 	$SETTING = SWELL_Theme::get_setting(); // SETTING取得
 ?>
 </head>
-<body>
+<body id="top-of-top">
 <?php if ( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
 <div id="body_wrap" <?php body_class(); ?> <?php SWELL_Theme::body_attrs(); ?>>
 <?php
@@ -62,4 +62,5 @@
 	if ( SWELL_Theme::is_show_pickup_banner() ) {
 		$cache_key = $SETTING['cache_top'] ? 'pickup_banner' : '';
 		SWELL_Theme::get_parts( 'parts/top/pickup_banner', null, $cache_key );
-	} 
+	}
+?>

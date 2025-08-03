@@ -1,0 +1,22 @@
+/* アニメーション遅延------------------------------- */
+.delay1 {
+    animation-delay: 0.5s !important;
+    transition-delay: 0.5s !important;
+}
+.delay2 {
+    animation-delay: 1.0s !important;
+    transition-delay: 1.0s !important;
+}
+.delay3 {
+    animation-delay: 1.5s !important;
+    transition-delay: 1.5s !important;
+}
+  
+@media (max-width: 768px) {
+    .delay1,
+    .delay2,
+    .delay3 {
+        animation-delay: 0.5s !important;
+        transition-delay: 0.5s !important;
+    }
+}

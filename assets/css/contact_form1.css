@@ -1,0 +1,125 @@
+/* contact form 7------------------------------- */
+#top-contact {
+    padding-top: 20px;
+	color:white;
+}
+
+.wpcf7-form.init {
+    color: white;
+}
+
+input[name="your-name"],
+input[name="your-email"],
+input[name="your-company"],
+textarea[name="your-message"] {
+	width: 100%;
+    padding: 10px;
+    line-height: 1;
+}
+
+/* PC版 2列レイアウト------- */
+@media (min-width: 769px) {
+    .custom-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: stretch;
+    }
+
+    .custom-form-grid span {
+        display: flex;
+        height: 100%;
+    }
+
+    .custom-form-grid span textarea {
+        flex-grow: 1;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* 左側のフィールドをまとめるコンテナ */
+    .form-left-column {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        /* gap: 0.5rem; */
+    }
+    
+    /* 右側のtextareaコンテナ */
+    .form-right-column {
+        display: flex;
+        flex-direction: column; 
+        height: 100%; 
+    }
+    
+    /* 左側の各フィールドのラベルとinputのスタイル */
+    .form-left-column label {
+        display: flex;
+        flex-direction: column;
+        height: 100%; 
+        align-items: stretch;
+    }
+
+    .form-left-column input {
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+    
+    /* 右側のtextarea */
+    .form-right-column textarea[name="your-message"] {
+        width: 100%;
+        height: 274px;
+        resize: vertical;
+        margin-bottom: 0;
+        margin-top: 8px;
+        box-sizing: border-box;
+    }
+    
+    /* 右側のラベル */
+    .form-right-column label {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+  
+    /* 送信ボタンを両列にまたがって配置 */
+    .wpcf7-submit {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 210px !important;
+    }
+    
+    /* 送信ボタンを含むp要素も両列にまたがらせる */
+    .wpcf7-form > p:last-child,
+    .wpcf7-form p:has(.wpcf7-submit) {
+        grid-column: 1 / -1 !important;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.wpcf7-submit {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 10rem;
+	border: none;
+	cursor: pointer;
+	line-height: 1;
+	font-size: 14.4px;
+	background-color: var(--color_main);
+	color: #ffffff;
+	padding: 12.5px 38px;
+	box-shadow: var(--swl-btn_shadow);
+	transition: box-shadow .3s;
+    border-radius: 80px;
+}
+
+
+/* Cloudflare Turnstile をグリッド全体にまたがらせる */
+.cf-turnstile {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    margin: 2rem auto;
+}
