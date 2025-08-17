@@ -24,10 +24,12 @@ textarea[name="your-message"] {
         gap: 4rem;
         align-items: stretch;
 
-        input,
-        textarea {
-            margin-top: 0.5rem;
-        }
+        
+    }
+
+    .custom-form-grid input,
+    .custom-form-grid textarea {
+        margin-top: 0.5rem;
     }
 
     .form-left-column {
@@ -85,31 +87,32 @@ textarea[name="your-message"] {
 
 /* モバイル用 */
 
+@media (max-width: 768px) {
+    .custom-form-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
 
-.custom-form-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    input,
-    textarea {
-        margin-top: 0.5rem;
+        input,
+        textarea {
+            margin-top: 0.5rem;
+        }
     }
-}
 
-.form-left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+    .form-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 
-.turnstile {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    
-}
+    .turnstile {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        
+    }
 
-.cf-turnstile {
-    transform: scale(0.75);
+    .cf-turnstile {
+        transform: scale(0.75);
+    }
 }
